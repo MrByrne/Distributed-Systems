@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.service3";
+option java_outer_classname = "MoistureImpl";
+
+package service3;
+
+// The Moisture Service Definition
+service Moisture {
+
+  rpc CheckMoisture (MoistureRequest) returns (MoistureReply) {}
+}
+
+// The request message
+message MoistureRequest {
+  string text = 1;
+}
+
+// The response message containing the weather
+message MoistureReply {
+  string message = 1;
+}
