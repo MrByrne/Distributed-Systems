@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.service2";
+option java_outer_classname = "LivestockDataImpl";
+
+package service5;
+
+// The LivestockData Service Definition
+service LivestockData {
+
+  rpc CheckLivestockData (LivestockDataRequest) returns (LivestockDataReply) {}
+}
+
+// The request message
+message LivestockDataRequest {
+  string text = 1;
+}
+
+// The response message containing the weather
+message LivestockDataReply {
+  string message = 1;
+}
