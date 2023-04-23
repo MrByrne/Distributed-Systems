@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "grpc.service3";
+option java_outer_classname = "FeedServiceImpl";
+
+package feed;
+
+// Interface exported by the server.
+service FeedService {
+
+  rpc feedLivestock(stream FeedMessage) returns (stream FeedResponse ) {}
+
+}
+
+message FeedMessage {
+	int32 number = 1;
+}
+
+message FeedResponse {
+	int32 number  = 1;
+}
