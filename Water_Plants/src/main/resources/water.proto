@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "grpc.service2";
+option java_outer_classname = "WaterServiceImpl";
+
+package water;
+
+// Interface exported by the server.
+service WaterService {
+
+  rpc waterPlants(WaterRequest) returns (stream WaterResponse ) {}
+
+}
+
+message WaterRequest {
+	int32 numbers = 1;
+}
+
+message WaterResponse {
+	int32 number = 1;
+}
+
