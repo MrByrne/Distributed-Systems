@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.service1";
+option java_outer_classname = "WeatherImpl";
+
+package service1;
+
+// The Weather service definition.
+service Weather {
+
+  rpc CheckWeather (WeatherRequest) returns (WeatherReply) {}
+}
+
+// The request message
+message WeatherRequest {
+  string text = 1;
+}
+
+// The response message containing the weather
+message WeatherReply {
+  string message = 1;
+}
