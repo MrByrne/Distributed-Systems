@@ -1,0 +1,27 @@
+// temp.proto
+
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "grpc.Service1";
+option java_outer_classname = "TempServiceImpl";
+
+package maths;
+
+// Interface exported by the server.
+service TempService {
+
+  rpc averageTemp(stream NumberMessage) returns (CalculateResponse ) {}
+
+}
+
+message CalculateResponse {
+	float result = 1;
+	string message = 2;
+}
+
+
+message NumberMessage{
+	float number = 1;
+}
